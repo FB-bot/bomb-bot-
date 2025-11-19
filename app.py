@@ -13,27 +13,33 @@ BASE_URL = f"https://api.telegram.org/bot{TOKEN}"
 # ==========================
 # Developer info (আপনি এখানে আপনার তথ্য লিখে বদলাবেন)
 # আপনি চাইলে এগুলো Environment variables-ও ব্যবহার করতে পারেন।
-DEVELOPER_NAME = "Rahim Uddin"
-DEVELOPER_ROLE = "Bot Developer • Python Engineer"
-DEVELOPER_BIO = "আমি সুন্দর, দ্রুত ও maintainable কোডে বিশ্বাস করি। Bot, API ও DevOps-এ অভিজ্ঞ।"
-DEVELOPER_GITHUB = "https://github.com/your-gh"
-DEVELOPER_LINKEDIN = "https://linkedin.com/in/your-profile"
+DEVELOPER_NAME = "NOONXVAU"
+DEVELOPER_ROLE = "Bot Developer • "
+DEVELOPER_BIO = "আমি সুন্দর, দ্রুত ও maintainable কোডে বিশ্বাস করি। Bot, API ও DevOps-"
+DEVELOPER_GITHUB = "https://www.facebook.com/noob.shiddik"
+DEVELOPER_LINKEDIN = ""
 DEVELOPER_TELEGRAM_URL = "https://t.me/noobxvau"
-DEVELOPER_WEBSITE = "https://your-site.example.com"
-GROUP_INVITE_LINK = "https://t.me/joinchat/XXXX"  # আপনার গ্রুপ invite link
-BOT_NAME = "BombBot"
+DEVELOPER_WEBSITE = "https://noobxbomb.netlify.app/"
+GROUP_INVITE_LINK = "https://t.me/+ENYrQ5N9WNE3NWQ9"  # আপনার গ্রুপ invite link
+BOT_NAME = "NOOBxBOMB"
 # ==========================
 
 app = Flask(__name__)
 
 # Pretty HTML templates
 WELCOME_TEMPLATE = """
-<b>👋 স্বাগতম, {first_name}!</b>
+👋 Welcome, {first_name}!
 
-আপনি <b>{bot_name}</b>-এ এসে পৌঁছেছেন — স্বল্প কিন্তু মার্জিত একটি ডেমো বট।  
-নীচের বাটনগুলো ব্যবহার করে ডেভেলপারকে কনট্যাক্ট করুন, গ্রুপে যোগ দিন বা ডেভেলপারের বিবরণ দেখুন।
+Welcome to <b>{bot_name}</b>.
+Sms bombing এ যাওয়ার জন্য নিচের Open Bomb বাটনে ক্লিক করুন ✅
 
-<i>কমান্ড / ফিচার চান? বলুন — আমি যোগ করে দিব।</i>
+Use the buttons below to:
+• Contact the developer  
+• Join our Telegram group  
+• View detailed developer information  
+
+<i>If you want new features, menus, or custom commands — just let me know!</i>
+
 """
 
 DEV_INFO_HTML = """
@@ -43,9 +49,7 @@ DEV_INFO_HTML = """
 {bio}
 
 <u>🔗 প্রোফাইল ও যোগাযোগ</u>
-• Website: <a href="{website}">{website}</a>
-• GitHub: <a href="{github}">{github}</a>
-• LinkedIn: <a href="{linkedin}">{linkedin}</a>
+• Facebook: <a href="{website}">{website}</a>
 • Telegram: <a href="{tlink}">{tlink}</a>
 
 <b>🛠️ দক্ষতা</b>
@@ -139,8 +143,8 @@ def telegram_webhook():
                     {"text": "👥 Join Group", "url": GROUP_INVITE_LINK}
                 ],
                 [
-                    {"text": "🌐 Website", "url": DEVELOPER_WEBSITE},
-                    {"text": "🐙 GitHub", "url": DEVELOPER_GITHUB}
+                    {"text": "🌐 Start Bomb", "url": DEVELOPER_WEBSITE},
+                    
                 ]
             ]
         }
