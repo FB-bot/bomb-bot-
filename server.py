@@ -5,9 +5,9 @@ from telegram import Bot, Update, InlineKeyboardButton, InlineKeyboardMarkup, Pa
 from telegram.ext import Dispatcher, CommandHandler
 
 # Environment variables (set these in Render or local env)
-TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
-CHANNEL_URL = os.environ.get("CHANNEL_URL", "https://t.me/your_channel")
-DEV_USERNAME = os.environ.get("DEV_USERNAME", "your_dev_username")  # without @
+TOKEN = os.environ.get("8592092723:AAENndcv24gscZCqBPys42rl0udNSbVKRVY")
+CHANNEL_URL = os.environ.get("https://t.me/+ENYrQ5N9WNE3NWQ9", "https://t.me/your_channel")
+DEV_USERNAME = os.environ.get("noobxvau", "your_dev_username")  # without @
 WEBHOOK_URL = os.environ.get("WEBHOOK_URL")  # Optional: https://<your-domain>/webhook
 
 if not TOKEN:
@@ -27,7 +27,8 @@ def start(update, context):
 
     welcome_text = (
         f"👋 <b>Welcome, {name}!</b>\n\n"
-        f"Welcome to <b>NOOB HACKER BD</b> — official bot.\n\n"
+        f"Welcome to <b>NOOB HACKER BD</b> — official bot .\n"
+        f"Welcome to <b>Sms bombing এ যাওয়ার জন্য নিচের Open Bomb বাটনে ক্লিক করুন ✅</b>\n\n"
         f"Developer Info:\n"
         f"• Name: <b>NOOBXVAU</b>\n"
         f"• Role: Developer / Contact\n\n"
