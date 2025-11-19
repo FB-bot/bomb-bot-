@@ -1,13 +1,13 @@
-
+# app.py
 import os
 from flask import Flask, request, abort
 from telegram import Bot, Update, InlineKeyboardButton, InlineKeyboardMarkup, ParseMode
 from telegram.ext import Dispatcher, CommandHandler
 
 # Environment variables (set these in Render or local env)
-TOKEN = os.environ.get("8592092723:AAENndcv24gscZCqBPys42rl0udNSbVKRVY")
-CHANNEL_URL = os.environ.get("https://t.me/+ENYrQ5N9WNE3NWQ9", "https://t.me/your_channel")
-DEV_USERNAME = os.environ.get("noobxvau", "your_dev_username")  # without @
+TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
+CHANNEL_URL = os.environ.get("CHANNEL_URL", "https://t.me/your_channel")
+DEV_USERNAME = os.environ.get("DEV_USERNAME", "your_dev_username")  # without @
 WEBHOOK_URL = os.environ.get("WEBHOOK_URL")  # Optional: https://<your-domain>/webhook
 
 if not TOKEN:
@@ -59,19 +59,25 @@ def webhook():
             update = Update.de_json(request.get_json(force=True), bot)
             dispatcher.process_update(update)
         except Exception as e:
+            # print error to logs for debugging
             print("Error processing update:", e)
             abort(400)
         return "OK"
     else:
         abort(405)
 
+# health route
 @app.route("/", methods=["GET"])
 def index():
     return "Telegram bot is running."
 
+# optionally set webhook on startup if WEBHOOK_URL provided
 if __name__ == "__main__":
     if WEBHOOK_URL:
         hook = WEBHOOK_URL if WEBHOOK_URL.endswith("/webhook") else WEBHOOK_URL.rstrip("/") + "/webhook"
-        res = bot.set_webhook(hook)
-        print("set_webhook result:", res)
+        try:
+            res = bot.set_webhook(hook)
+            print("set_webhook result:", res)
+        except Exception as e:
+            print("Error setting webhook:", e)
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
