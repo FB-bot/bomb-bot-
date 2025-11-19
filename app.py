@@ -3,7 +3,7 @@ import json
 import requests
 from flask import Flask, request, Response
 
-TOKEN = os.environ.get("8592092723:AAENndcv24gscZCqBPys42rl0udNSbVKRVY")  # Render এ সেট করবেন
+TOKEN = os.environ.get("TELEGRAM_TOKEN")  # Render এ সেট করবেন
 if not TOKEN:
     raise RuntimeError("TELEGRAM_TOKEN environment variable is required")
 
