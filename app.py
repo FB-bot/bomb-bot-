@@ -8,7 +8,7 @@ from telegram.ext import Dispatcher, CommandHandler
 TOKEN = os.environ.get("8592092723:AAENndcv24gscZCqBPys42rl0udNSbVKRVY")
 CHANNEL_URL = os.environ.get("https://t.me/mysmartearn_bot/mysmartearn?startapp=ref1849126202", "https://t.me/your_channel")  # পরিবর্তন করুন
 DEV_USERNAME = os.environ.get("noobxvau", "your_dev_username")        # পরিবর্তন করুন (বিনা @)
-WEBHOOK_URL = os.environ.get("WEBHOOK_URL")  # Optional: https://<your-domain>/webhook
+WEBHOOK_URL = os.environ.get("https://bomb-bot.onrender.com")  # Optional: https://<your-domain>/webhook
 
 if not TOKEN:
     raise RuntimeError("TELEGRAM_BOT_TOKEN environment variable is required.")
