@@ -1,4 +1,4 @@
-# app.py
+
 import os
 from flask import Flask, request, abort
 from telegram import Bot, Update, InlineKeyboardButton, InlineKeyboardMarkup, ParseMode
@@ -27,8 +27,7 @@ def start(update, context):
 
     welcome_text = (
         f"👋 <b>Welcome, {name}!</b>\n\n"
-        f"Welcome to <b>NOOB HACKER BD</b> — official bot .\n"
-        f"Welcome to <b>Sms bombing এ যাওয়ার জন্য নিচের Open Bomb বাটনে ক্লিক করুন ✅</b>\n\n"
+        f"Welcome to <b>NOOB HACKER BD</b> — official bot.\n\n"
         f"Developer Info:\n"
         f"• Name: <b>NOOBXVAU</b>\n"
         f"• Role: Developer / Contact\n\n"
